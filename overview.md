@@ -105,3 +105,12 @@ Il dominio AD DS contiene un account **Administrator** e un gruppo **Domain Admi
 **Relazioni di fiducia**  
 In foreste multi-dominio i legami di fiducia (trust) tra i domini sono fondamentali per garantire accesso alle risorse condivise presenti nei singli domini.  
 I legami di fiducia che si creano automaticamente nella foresta hanno tutti proprietà transitive, ovvero se il dominio A ritiene che il dominio B sia fidato e a sua volta il dominio B ritiene che il dominio C sia affidabile, allora anche il dominio A ritiene il dominio C fidato.  
+
+# Organizational Units (OUs)
+
+Una OU è un contenitore di oggetti all'interno di un dominio a cui possono essere associate GPO. Queste policies sono poi applicate gli utenti e computer membri dell'OU.  
+L'utilità delle OU è proprio quella di raggruppare e gestire oggetti che condividono caratterstiche e simili e di delegare la gestione a utenti o gruppi, oltre ai Domain Admins.  
+AD DS crea automaticamente dei container dove memorizza per la prima volta utenti e computer e altrr oggetti. Questi contenitori **non** sono OU e hanno funzioni limitate come ad esempio l'associazione di GPO.  
+L'unica OU creata automaticamente da AD DS è *Domain Controllers OU*.  
+
+È possibile includere OUs dentro altre OUs, per best practice e per mantenere un livello di gestione e flessiblità ragionevole è consigliato non superare 10 livelli di nidificazione.
